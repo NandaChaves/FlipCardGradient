@@ -1,0 +1,165 @@
+*{
+margin: 0;
+padding: 0;
+text-decoration: none;
+
+}
+/*Fundo colorido em movimento */
+body{
+    background:#282828;
+	background: linear-gradient(-45deg,#cc0044,#E73C7E,#23A6D5,#23D5AB,#00997a);
+    background-size:400% 400%;
+	animation: Gradient 15s ease infinite;	
+}
+
+
+@-webkit-keyframes Gradient {
+	0%{
+	   background-position: 0% 50%
+	}
+	
+	50%{
+		background-position:100% 50%
+	}
+	100%{
+		background-position: 0% 50%
+	}
+}/*Fundo colorido em movimento */
+
+/*Menu*/
+nav{
+    position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100px;
+	padding:10 px 90px;
+	box-sizing:border-box;
+	background:rgba(0,0,0,0.5);
+	font-family: Source Sans Pro;
+}
+
+nav .logo{
+    padding:22px 20px;
+	height:80 px;
+	float: left;
+	font-size:24px;
+	font-weight: bold;
+	text-transform:uppercase;
+	color:#fff;
+}
+
+nav ul{
+    list-style:none;
+    float:right;
+    margin:0;
+    padding:0;
+    display:flex;			
+}
+
+nav ul li a{
+    line-height:80px;
+    color:#fff;	
+    padding:12px 30px;	
+    text-decoration:none;	
+	text-transform:uppercase;
+	font-size:15px;
+	font-weight:bold;
+	
+}
+
+nav ul li a:hover{
+	background:rgba(0,0,0,0.7);
+	border-radius:6px;
+	
+}
+
+nav ul li a.active{
+	background:#e2472f;
+	color:#fff;
+	border-radius:6px;	
+}
+
+section{
+	width:100%;
+	height:300hv;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;	
+}/*Menu*/
+
+
+
+/*FlipCard*/
+.middle {
+position: absolute;	
+top: 50%;	
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.card{
+cursor: pointer;
+width: 340px;	
+height: 480px;	
+}
+
+.front,.back{
+width:100%;
+height:100%;
+overflow: hidden;
+backface-visibility: hidden;
+position:absolute;
+transition: transform .6s linear;
+}
+
+.front img{
+height:100%;		
+}
+
+.front{
+transform: perspective(600px) rotateY(0deg);		
+}
+
+.back{
+background:#f1f1f1;
+transform: perspective(600px) rotateY(180deg);
+}
+
+.back-content{
+font-family:"Comic Sans MS";
+color:#2c3e50;
+text-align:center;
+width: 100%;	
+}
+
+.sm{
+margin: 50px 0;
+}
+
+.sm a{
+display: inline-flex;
+width: 40px;
+height:40px;
+justify-content:center;
+align-items:center;
+color:#2c3e50;
+font-size:18px;
+transition:0.4s;
+border-radius:50%;	
+}
+.sm a:hover{
+background:#2c3e50;
+color:purple;
+}
+
+.card:hover > .front{
+  transform:perspective(600px) rotateY(-180deg);			
+}
+
+.card:hover > .back{
+  transform:perspective(600px) rotateY(0deg);			
+}
+
+
+/*FlipCard 
